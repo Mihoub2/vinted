@@ -3,13 +3,11 @@
 }
 
 .page {
-  height: 500px;
-  width: 500px;
   margin: 0 auto;
-  text-align: center;
 }
 .home {
-  background: rebeccapurple;
+  display: flex;
+  flex-wrap: wrap;
 }
 .about {
   background: bisque;
@@ -44,4 +42,13 @@
 .button {
   display: flex;
   height: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container img {
+  width: 230px;
+  height: 360px;
 }

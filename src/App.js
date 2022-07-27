@@ -10,7 +10,7 @@ import Header from "./pages/Header";
 
 function App() {
   const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,17 +31,12 @@ function App() {
         ) : (
           <>
             <Header></Header> <nav> Ma Navigation</nav>
-            <Link to="/home"> Home</Link>
+            <Link to="/"> Home</Link>
             <br />
-            <br />
-            <Link to="/offer">Go to Offer</Link>
+            <Link to="/offer/:id">Go to Offer</Link>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/offer/:id"
-                mainOffers={data.offers}
-                element={<Offer />}
-              />
+              <Route path="/" element={<Home mainOffers={data} />} />
+              <Route path="/offer/:id" element={<Offer />} />
             </Routes>{" "}
             <></>
           </>
