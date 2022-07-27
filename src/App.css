@@ -1,38 +1,47 @@
-.App {
+* {
+  font-family: sans-serif;
+}
+
+.page {
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home {
+  background: rebeccapurple;
+}
+.about {
+  background: bisque;
+}
+.offer {
+  background: aqua;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* HEADER */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 120px;
+  border: solid 1px black;
+  width: 100%;
+}
+.leftHeader {
+  width: 10%;
+}
+.leftHeader img {
+  width: 200px;
+}
+
+.centerHeader {
+  width: 60%;
+}
+.rightHeader {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button {
+  display: flex;
+  height: 50px;
 }
