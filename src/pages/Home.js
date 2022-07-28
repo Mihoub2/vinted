@@ -5,25 +5,25 @@ const Home = ({ mainOffers }) => {
 
   return (
     <div className="page home">
-      {mainOffers.offers.map((offer) => {
-        console.log(mainOffers);
+      {mainOffers.offers.map((offer, index) => {
         return (
-          <div
-            className="container"
-            onClick={() => {
-              <Link to={`/product/${offer._id}`}> {offer._id}</Link>;
-            }}
-          >
-            {/* <p>{offer.owner.account.username}</p>
-            {console.log(offer.owner.account.username)} */}
-            <p>
-              <img src={offer.product_pictures[0].url} alt="" />
-            </p>{" "}
-            <p>{offer.product_price}$</p>
-            <p>{offer.product_details[1].TAILLE}</p>
-            <p>{offer.product_details[0].MARQUE}</p>
-            <> </>
-          </div>
+          <Link key={index} to={`/offer/${offer._id}`}>
+            <div className="container">
+              {offer.owner && (
+                <div className="user">
+                  <img src={offer.owner.account.avatar.secure_url} alt="ok" />
+                  {offer.owner.account.username}
+                </div>
+              )}
+              <p>
+                <img src={offer.product_pictures[0].secure_url} alt="" />
+              </p>{" "}
+              <p>{offer.product_price}$</p>
+              <p>{offer.product_details[1].TAILLE}</p>
+              <p>{offer.product_details[0].MARQUE}</p>
+              <> </>
+            </div>
+          </Link>
         );
       })}
     </div>

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -7,6 +7,8 @@ import axios from "axios";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Header from "./pages/Header";
+import Signup from "./pages/Signup";
+import Connect from "./pages/Connect";
 
 function App() {
   const [data, setData] = useState();
@@ -30,14 +32,13 @@ function App() {
           <h1>En cours de chargement</h1>
         ) : (
           <>
-            <Header></Header> <nav> Ma Navigation</nav>
-            <Link to="/"> Home</Link>
-            <br />
-            <Link to="/offer/:id">Go to Offer</Link>
+            <Header></Header>
             <Routes>
               <Route path="/" element={<Home mainOffers={data} />} />
-              <Route path="/offer/:id" element={<Offer />} />
-            </Routes>{" "}
+              <Route path="/offer/:id" element={<Offer mainOffers={data} />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/connect/" element={<Connect />} />
+            </Routes>
             <></>
           </>
         )}
