@@ -16,6 +16,7 @@ function App() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [token, setToken] = useState(Cookies.get("userToken") || null);
+  const [filter, setFilter] = useState("");
 
   const setUser = (tokenToCheck) => {
     if (tokenToCheck !== null) {
@@ -28,6 +29,14 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
+      // let filters = "";
+      // if(title) {
+      //   filters= filters + "?title=" + title
+      // }
+      // if(priceMax) {
+      //   if()
+      //   filters= filters + "&title=" + title
+      // }
       const response = await axios.get(
         "https://lereacteur-vinted-api.herokuapp.com/offers"
       );

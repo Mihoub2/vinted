@@ -79,7 +79,7 @@ const Signup = ({ setUser }) => {
               onChange={(event) => {
                 setNewsLetter(event.target.checked);
               }}
-            />{" "}
+            />
             <span>S'inscrire à notre newsletter</span>
           </div>
           <p className="submitInfo">

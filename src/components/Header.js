@@ -28,22 +28,25 @@ const Header = ({ token, setUser }) => {
               <button>Se connecter</button>
             </Link>
           </div>
-          <Link className="button" to="/creatOffer">
+          <Link className="button" to={token ? "/creatOffer" : "/connect"}>
             <button>Vends tes articles</button>
-          </Link>{" "}
+          </Link>
         </div>
       ) : (
         <span>
-          {" "}
-          <button
-            className="deconnect"
-            onClick={() => {
-              setUser(null);
-              navigate("/");
-            }}
-          >
-            Se déconnecter
-          </button>
+          <div className="deconnect">
+            <Link className="button" to={token ? "/creatOffer" : "/connect"}>
+              <button>Vends tes articles</button>
+            </Link>
+            <button
+              onClick={() => {
+                setUser(null);
+                navigate("/");
+              }}
+            >
+              Se déconnecter
+            </button>
+          </div>
         </span>
       )}
     </div>

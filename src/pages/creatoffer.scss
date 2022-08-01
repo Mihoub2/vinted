@@ -1,0 +1,49 @@
+.creatContainer {
+  display: flex;
+  justify-content: center;
+}
+.creatForm {
+  margin-top: 60px;
+  width: 1300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.creatTitle {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.normalInput {
+  margin-top: 20px;
+  height: 50px;
+  border: none;
+  border-bottom: 1px red solid;
+  font-size: 18px;
+  color: #c6c6c6;
+}
+.insertPic {
+  display: none;
+}
+
+.setPic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #0ab1ba;
+  border-radius: 4px;
+  height: 45px;
+  cursor: pointer;
+}
+.inputSign {
+  color: #0ab1ba;
+  font-weight: 700;
+}
+.label-file > span {
+  margin: 0 10px;
+  vertical-align: middle;
+}
+.label-file {
+  cursor: pointer;
+  color: #0ab1ba;
+  font-weight: 700;
+}
