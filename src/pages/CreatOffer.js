@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import "./creatoffer.scss";
+import { Link, useNavigate } from "react-router-dom";
 
 const CreatOffer = ({ token }) => {
   console.log(token);
+  const navigate = useNavigate();
 
   const [picture, setPicture] = useState(null);
   const [data, setData] = useState(null);
@@ -144,7 +146,9 @@ const CreatOffer = ({ token }) => {
             }}
           />
           {/* <input type="checkbox" placeholder="Prix" /> */}
-          <input type="submit" value="Envoyer votre offre!" />
+          <Link to="/">
+            <input type="submit" value="Envoyer votre offre!" />
+          </Link>
         </form>
       </div>
     </div>
