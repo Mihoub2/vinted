@@ -1,14 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
-import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import "./connect.scss";
 
-const Connect = () => {
+const Connect = ({ setUser }) => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
 
   const onSubmitForm = async (event) => {
     event.preventDefault();
@@ -21,14 +20,10 @@ const Connect = () => {
           password: password,
         }
       );
-      setEmail(response.data.email);
-      setPassword(response.data.password);
-      console.log(response.data);
-      const cookie = Cookies.get("token");
-
-      Cookies.get(cookie, token);
-      setToken("token");
-      navigate("/");
+      if (response.data.token) {
+        setUser(response.data.token);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error.response);
     }
@@ -37,9 +32,10 @@ const Connect = () => {
   return (
     <div className="connectContainer">
       <div className="connectForm">
-        <h2>Se connecter</h2>{" "}
+        <h2 className="connectTitle">Se connecter</h2>{" "}
         <form onSubmit={onSubmitForm}>
           <input
+            className="normalInput"
             type="email"
             placeholder="Email"
             value={email}
@@ -48,6 +44,7 @@ const Connect = () => {
             }}
           />
           <input
+            className="normalInput"
             type="password"
             placeholder="Mot de passe"
             value={password}
@@ -55,7 +52,7 @@ const Connect = () => {
               setPassword(event.target.value);
             }}
           />
-          <input type="submit" />
+          <input className="submitButton" type="submit" value="Se connecter" />
         </form>
       </div>
     </div>

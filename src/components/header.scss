@@ -1,0 +1,60 @@
+.Header {
+  display: flex;
+  height: 120px;
+}
+//
+.leftHeader {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+.leftHeader img {
+  width: 110px;
+  height: 50px;
+  margin-left: 82px;
+}
+
+.centerHeader {
+  width: 25%;
+  display: flex;
+
+  align-items: center;
+}
+
+.inputCenter {
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+}
+.rightHeader {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 65px;
+}
+
+button {
+  height: 40px;
+  width: 115px;
+  background-color: white;
+  border-radius: 10px;
+  border: solid 1px #2db1ba;
+  justify-content: center;
+  align-items: center;
+  color: #2db1ba;
+  display: flex;
+  margin-right: 60px;
+}
+.vendre {
+  background-color: #2db1ba;
+  color: white;
+  width: 145px;
+}
+.twoButton {
+  display: flex;
+}
+.deconnect {
+  margin-top: 40px;
+  margin-left: 300px;
+}

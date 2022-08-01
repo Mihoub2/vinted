@@ -1,0 +1,51 @@
+.connectContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.connectForm {
+  margin-top: 60px;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.connectTitle {
+  font-size: 24px;
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.normalInput {
+  margin-top: 20px;
+  height: 50px;
+  border: none;
+  border-bottom: 1px red solid;
+  font-size: 18px;
+  color: #c6c6c6;
+}
+.submitInfo {
+  color: #c6c6c6;
+  padding: 20px;
+  font-size: 15px;
+}
+.checkbox {
+  margin-top: 20px;
+}
+.submitButton {
+  background-color: #2db1ba;
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.checkBoxAndText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

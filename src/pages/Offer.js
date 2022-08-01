@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./offer.scss";
 
 const Offer = () => {
   const { id } = useParams();
 
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
