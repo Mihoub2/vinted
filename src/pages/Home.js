@@ -8,6 +8,12 @@ const Home = ({ mainOffers }) => {
   return (
     <div className="home">
       <img className="mainImg" src={image} alt="ok" />
+      <div className="relative">
+        <p className="pRelative">Prêts à faire du tri dans vos placards ?</p>
+        <Link className="button" to="/creatOffer">
+          <button className="buttonHome">Commence à vendre !</button>
+        </Link>
+      </div>
       {mainOffers.offers.map((offer, index) => {
         return (
           <Link key={index} to={`/offer/${offer._id}`}>

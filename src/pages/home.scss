@@ -33,6 +33,30 @@
   width: 100%;
   height: 500px;
   object-fit: cover;
+  position: absolute;
+}
+.pRelative {
+  padding: 20px;
+  font-size: 30px;
+}
+.buttonHome {
+  background-color: #2baeb7;
+  color: white;
+  margin-top: 40px;
+  margin-left: 20px;
+  width: 200px;
+}
+.relative {
+  width: 410px;
+  margin-left: 200px;
+  margin-top: 150px;
+  background: white;
+  height: 270px;
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 .homeOffer {
   padding: 15px;

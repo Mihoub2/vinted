@@ -29,10 +29,6 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      // let filters = "";
-      // if(title) {
-      //   filters= filters + "?title=" + title
-      // }
       // if(priceMax) {
       //   if()
       //   filters= filters + "&title=" + title
