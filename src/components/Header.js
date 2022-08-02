@@ -39,6 +39,7 @@ const Header = ({ token, setUser }) => {
               <button>Vends tes articles</button>
             </Link>
             <button
+              className="deco"
               onClick={() => {
                 setUser(null);
                 navigate("/");

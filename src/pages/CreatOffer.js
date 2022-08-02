@@ -46,6 +46,11 @@ const CreatOffer = ({ token }) => {
       );
       setData(response.data);
       setIsPictureSending(false);
+      if (response.data._id) {
+        navigate(`/offer/${response.data._id}`);
+      } else {
+        alert();
+      }
     } catch (error) {
       console.log(error.response);
     }
@@ -56,11 +61,6 @@ const CreatOffer = ({ token }) => {
       <div className="creatForm">
         <h1 className="creatTitle">Vends ton articles</h1>
         <form className="otherForm" onSubmit={handleSendOffer}>
-          {isPictureSending === true ? (
-            <p>Image en cours d'upload</p>
-          ) : (
-            data && <img src={data.picture} style={{ width: "200px" }} alt="" />
-          )}
           <label htmlFor="file" className="setPic">
             <span className="inputSign">+</span>
             <span>Ajouter une photo</span>
@@ -146,9 +146,8 @@ const CreatOffer = ({ token }) => {
             }}
           />
           {/* <input type="checkbox" placeholder="Prix" /> */}
-          <Link to="/">
-            <input type="submit" value="Envoyer votre offre!" />
-          </Link>
+
+          <input type="submit" value="Envoyer votre offre!" />
         </form>
       </div>
     </div>
