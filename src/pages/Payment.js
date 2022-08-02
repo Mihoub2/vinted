@@ -9,24 +9,39 @@ const stripePromise = loadStripe(
 );
 
 const Payment = () => {
-  // const location = useLocation();
-  // const price = location.state;
+  const location = useLocation();
+  const price = location.state.price;
+  const name = location.state.productName;
+
+  const protectfees = 0.8 % price;
+  const fees = 1 % price;
+  const total = protectfees + fees + price;
+
+  console.log(location);
   return (
     <div className="globalPayment">
       <div className="blockPayment">
         <div className="firstBlock">
-          <p> Résumé de la commande</p>
+          <p className="paymentTitle"> Résumé de la commande</p>
           <p>
             Commande
-            {/* <span>{price}</span> */}
+            <span className="price">{price}$</span>
           </p>
-          <p> Frais de port</p>
+          <p>
+            Frais protection acheteurs{" "}
+            <span className="price">{protectfees}$</span>
+          </p>
+          <p>
+            Frais de port <span className="price">{fees}$</span>
+          </p>
         </div>
         <div>
-          <p>Total</p>
-          <p>
-            Il ne vous reste plus qu'un étape pour vous offrir title. Vous allez
-            payer 0 € (frais de protection et frais de port inclus).
+          <p className="paymentTotal">
+            Total <span className="price">{total}$</span>
+          </p>
+          <p className="paymentText">
+            Il ne vous reste plus qu'un étape pour vous offrir {name}. Vous
+            allez payer {total}$$ (frais de protection et frais de port inclus).
           </p>
         </div>
         <div className="payment">

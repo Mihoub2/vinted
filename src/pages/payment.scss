@@ -14,12 +14,27 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.paymentTitle {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
 .payment {
-  margin-top: 300px;
+  margin-top: 30px;
   height: 150px;
 }
 .firstBlock {
   display: flex;
   flex-direction: column;
+}
+.price {
+  display: flex;
+  justify-content: end;
+}
+.paymentText {
+  margin-top: 200px;
+}
+.paymentTotal {
+  margin-top: 20px;
 }
