@@ -1,0 +1,25 @@
+.globalPayment {
+  display: flex;
+  background-color: #ebedee;
+  justify-content: center;
+  height: 2000px;
+}
+.blockPayment {
+  background-color: white;
+  width: 600px;
+  height: 550px;
+
+  margin-top: 40px;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.payment {
+  margin-top: 300px;
+  height: 150px;
+}
+.firstBlock {
+  display: flex;
+  flex-direction: column;
+}

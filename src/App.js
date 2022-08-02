@@ -10,13 +10,14 @@ import Offer from "./pages/Offer";
 import Header from "./components/Header";
 import Signup from "./pages/Signup";
 import Connect from "./pages/Connect";
+import Payment from "./pages/Payment";
 import CreatOffer from "./pages/CreatOffer";
+import "./App.css";
 
 function App() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [token, setToken] = useState(Cookies.get("userToken") || null);
-  const [filter, setFilter] = useState("");
 
   const setUser = (tokenToCheck) => {
     if (tokenToCheck !== null) {
@@ -29,10 +30,6 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      // if(priceMax) {
-      //   if()
-      //   filters= filters + "&title=" + title
-      // }
       const response = await axios.get(
         "https://lereacteur-vinted-api.herokuapp.com/offers"
       );
@@ -59,6 +56,7 @@ function App() {
                 path="/creatOffer"
                 element={<CreatOffer token={token} />}
               />
+              <Route path="/payment/" element={<Payment />} />
             </Routes>
             <></>
           </>

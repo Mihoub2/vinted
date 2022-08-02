@@ -2,12 +2,16 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./offer.scss";
+import { useNavigate } from "react-router-dom";
 
 const Offer = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
+
+  // const price = data.product_price;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,6 +72,20 @@ const Offer = () => {
                     {data.owner.account.username}
                   </div>
                 )}
+                <button
+                  className="button"
+                  onClick={() => {
+                    navigate("/payment", {
+                      state: {
+                        productName: data.product_name,
+
+                        price: data.product_price,
+                      },
+                    });
+                  }}
+                >
+                  Acheter
+                </button>
               </div>
             </div>
           </div>

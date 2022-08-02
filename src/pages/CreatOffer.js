@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./creatoffer.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreatOffer = ({ token }) => {
   console.log(token);
@@ -9,7 +9,7 @@ const CreatOffer = ({ token }) => {
 
   const [picture, setPicture] = useState(null);
   const [data, setData] = useState(null);
-  const [isPictureSending, setIsPictureSending] = useState(false);
+  // const [isPictureSending, setIsPictureSending] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [marque, setMarque] = useState("");
@@ -21,7 +21,7 @@ const CreatOffer = ({ token }) => {
 
   const handleSendOffer = async (event) => {
     event.preventDefault();
-    setIsPictureSending(true);
+    // setIsPictureSending(true);
     const formData = new FormData();
     formData.append("picture", picture);
     formData.append("title", title);
@@ -45,7 +45,7 @@ const CreatOffer = ({ token }) => {
         }
       );
       setData(response.data);
-      setIsPictureSending(false);
+      // setIsPictureSending(false);
       if (response.data._id) {
         navigate(`/offer/${response.data._id}`);
       } else {
