@@ -32,6 +32,7 @@
   align-items: center;
   justify-content: space-between;
   margin-right: 65px;
+  text-decoration: none;
 }
 
 button {
@@ -53,12 +54,14 @@ button {
 }
 .twoButton {
   display: flex;
+  text-decoration: none;
 }
 .deconnect {
   margin-top: 40px;
   margin-left: 300px;
   display: flex;
+  text-decoration: none;
 }
 .deco {
-  background-color: red;
+  background-color: white;
 }

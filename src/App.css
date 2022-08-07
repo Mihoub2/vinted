@@ -1,3 +1,6 @@
 * {
   font-family: sans-serif;
 }
+.button {
+  text-decoration: none;
+}

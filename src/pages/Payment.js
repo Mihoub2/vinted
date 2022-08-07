@@ -15,9 +15,9 @@ const Payment = () => {
 
   const protectfees = 0.8 % price;
   const fees = 1 % price;
-  const total = protectfees + fees + price;
+  const total = Number(protectfees + fees + price);
+  console.log(typeof total);
 
-  console.log(location);
   return (
     <div className="globalPayment">
       <div className="blockPayment">
@@ -46,7 +46,7 @@ const Payment = () => {
         </div>
         <div className="payment">
           <Elements stripe={stripePromise}>
-            <CheckoutForm />
+            <CheckoutForm total={Number(total)} name={name} />
           </Elements>
         </div>
       </div>
