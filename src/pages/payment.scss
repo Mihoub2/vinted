@@ -12,7 +12,6 @@
   margin-top: 40px;
   border-radius: 10px;
   padding: 20px;
-  box-sizing: border-box;
 }
 .paymentTitle {
   font-size: 30px;
@@ -28,10 +27,6 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
-}
-.price {
-  display: flex;
-  justify-content: end;
 }
 .paymentText {
   margin-top: 200px;

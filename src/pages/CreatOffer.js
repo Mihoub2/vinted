@@ -45,6 +45,7 @@ const CreatOffer = ({ token }) => {
         }
       );
       setData(response.data);
+      console.log(data);
       // setIsPictureSending(false);
       if (response.data._id) {
         navigate(`/offer/${response.data._id}`);
